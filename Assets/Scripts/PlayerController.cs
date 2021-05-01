@@ -17,8 +17,13 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletToFire;
     public Transform firePoint;
 
-    public float timeBetweenShots = 0.1f;
+    public float timeBetweenShots = 0.2f;
     private float shotCountDown;
+
+    private Vector2 offsetFromPlayerToMouse;
+    private float weaponAngle;
+
+    private static readonly int LEFT_MOUSE_BUTTON = 0;
 
     void Start()
     {
@@ -27,43 +32,74 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // move player around
+        MovePlayer();
+        RotateWeapon();
+        ShootIfPossible();
+        Animate();
+    }
+
+    private void MovePlayer()
+    {
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
         moveInput.Normalize();
 
         playerRigidBody.velocity = moveInput * moveSpeed;
+    
+    }
 
-        animator.SetFloat("Speed", moveInput.sqrMagnitude);
-
-
-        // rotate weapon section
+    private void RotateWeapon() {
         Vector3 mousePosition = Input.mousePosition;
         Vector3 screenPoint = worldCamera.WorldToScreenPoint(transform.localPosition);
 
+        offsetFromPlayerToMouse = new Vector2(mousePosition.x - screenPoint.x, mousePosition.y - screenPoint.y);
+        weaponAngle = Mathf.Atan2(offsetFromPlayerToMouse.y, offsetFromPlayerToMouse.x) * Mathf.Rad2Deg - 90;
+        weaponArm.rotation = Quaternion.Euler(0, 0, weaponAngle);
+    }
 
-        Vector2 offset = new Vector2(mousePosition.x - screenPoint.x, mousePosition.y - screenPoint.y);
-
-        animator.SetFloat("Horizontal", offset.x);
-        animator.SetFloat("Vertical", offset.y);
-        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg - 90;
-
-        weaponArm.rotation = Quaternion.Euler(0, 0, angle);
-
-
-        // shoot
-        if (Input.GetMouseButtonDown(0)) {
-            Instantiate(bulletToFire, firePoint.position, Quaternion.Euler(0, 0, angle + 90));
-            shotCountDown = timeBetweenShots;
+    private void ShootIfPossible() {
+        if (CanShoot())
+        {
+            Shoot();
         }
+        else
+            DecrementCountDown();
+    }
 
-        if (Input.GetMouseButton(0)) {
-            shotCountDown -= Time.deltaTime;
-            if (shotCountDown <= 0) {
-                Instantiate(bulletToFire, firePoint.position, Quaternion.Euler(0, 0, angle + 90));
-                shotCountDown = timeBetweenShots;
-            }
-        }
+    private bool CanShoot() {
+        return LeftButtonClicked() && EnoughTimeHasPassedToShoot();
+    }
+
+    private bool LeftButtonClicked() {
+        return Input.GetMouseButton(LEFT_MOUSE_BUTTON);
+    }
+
+    private bool EnoughTimeHasPassedToShoot() {
+        return shotCountDown <= 0;
+    }
+
+    private void Shoot() {
+        InstantiateBullet();
+        ResetCountDown();
+    }
+
+    private void InstantiateBullet() {
+        Instantiate(bulletToFire, firePoint.position, Quaternion.Euler(0, 0, weaponAngle + 90));
+    }
+
+    private void ResetCountDown() {
+        shotCountDown = timeBetweenShots;
+    }
+
+    private void DecrementCountDown() {
+        shotCountDown -= Time.deltaTime;
+    }
+
+
+    private void Animate() {
+        animator.SetFloat("Speed", moveInput.sqrMagnitude);
+        animator.SetFloat("Horizontal", offsetFromPlayerToMouse.x);
+        animator.SetFloat("Vertical", offsetFromPlayerToMouse.y);
     }
 }

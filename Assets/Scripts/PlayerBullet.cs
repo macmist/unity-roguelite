@@ -10,10 +10,6 @@ public class PlayerBullet : MonoBehaviour
 
     public GameObject impactEffect;
 
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
@@ -22,12 +18,21 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(gameObject);
+        ShowParticleAndDestroy();
+
     }
 
     private void OnBecameInvisible()
     {
+        DestroyBullet();
+    }
+
+    private void ShowParticleAndDestroy() {
+        Instantiate(impactEffect, transform.position, transform.rotation);
+        DestroyBullet();
+    }
+
+    private void DestroyBullet() {
         Destroy(gameObject);
     }
 }
