@@ -5,10 +5,15 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody2D enemyBody;
+
     public float moveSpeed;
     public float rangeToChasePlayer;
-
     private Vector3 moveDirection;
+
+
+    public Animator animator;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,5 +35,7 @@ public class EnemyController : MonoBehaviour
         moveDirection.Normalize();
 
         enemyBody.velocity = moveDirection * moveSpeed;
+        animator.SetFloat("Speed", moveDirection.sqrMagnitude);
+
     }
 }
