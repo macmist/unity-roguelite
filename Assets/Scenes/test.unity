@@ -498,7 +498,7 @@ GameObject:
   - component: {fileID: 1640169150}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,6 +581,7 @@ MonoBehaviour:
   moveSpeed: 2
   rangeToChasePlayer: 7
   animator: {fileID: 1640169150}
+  health: 150
 --- !u!95 &1640169150
 Animator:
   serializedVersion: 3

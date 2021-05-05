@@ -6,6 +6,7 @@ public class PlayerBullet : MonoBehaviour
 {
 
     public float speed = 7.5f;
+    public int damageToGive = 50;
     public Rigidbody2D bulletRigidBody;
 
     public GameObject impactEffect;
@@ -18,8 +19,10 @@ public class PlayerBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.tag == "Enemy") {
+            other.GetComponent<EnemyController>().Damage(damageToGive);
+        }
         ShowParticleAndDestroy();
-
     }
 
     private void OnBecameInvisible()

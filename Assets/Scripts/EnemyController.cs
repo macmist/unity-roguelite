@@ -10,9 +10,9 @@ public class EnemyController : MonoBehaviour
     public float rangeToChasePlayer;
     private Vector3 moveDirection;
 
-
     public Animator animator;
 
+    public int health = 150;
 
 
     // Start is called before the first frame update
@@ -37,5 +37,12 @@ public class EnemyController : MonoBehaviour
         enemyBody.velocity = moveDirection * moveSpeed;
         animator.SetFloat("Speed", moveDirection.sqrMagnitude);
 
+    }
+
+    public void Damage(int damage) 
+    {
+        health -= damage;
+        if (health <= 0)
+            Destroy(gameObject);
     }
 }
