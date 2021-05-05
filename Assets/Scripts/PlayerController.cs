@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     public float moveSpeed;
     private Vector2 moveInput;
 
@@ -24,6 +25,11 @@ public class PlayerController : MonoBehaviour
     private float weaponAngle;
 
     private static readonly int LEFT_MOUSE_BUTTON = 0;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     void Start()
     {

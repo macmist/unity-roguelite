@@ -358,13 +358,13 @@ TextureImporter:
     second: char-builder-sheet-alpha_141
   - first:
       213: -7650287212833087326
-    second: char-builder-sheet-alpha_142
+    second: skeleton_walk_down_1
   - first:
       213: -2279131748380610788
-    second: char-builder-sheet-alpha_143
+    second: skeleton_down
   - first:
       213: 7220402845310529552
-    second: char-builder-sheet-alpha_144
+    second: skeleton_walk_down_2
   - first:
       213: -1341746357291216792
     second: char-builder-sheet-alpha_145
@@ -415,13 +415,13 @@ TextureImporter:
     second: char-builder-sheet-alpha_160
   - first:
       213: -562801435536370766
-    second: char-builder-sheet-alpha_161
+    second: skeleton_walk_left_1
   - first:
       213: -4999561633692258851
-    second: char-builder-sheet-alpha_162
+    second: skeleton_left
   - first:
       213: -2885677499259836500
-    second: char-builder-sheet-alpha_163
+    second: skeleton_walk_left_2
   - first:
       213: -3774637486992127080
     second: char-builder-sheet-alpha_164
@@ -460,13 +460,13 @@ TextureImporter:
     second: char-builder-sheet-alpha_175
   - first:
       213: 7063227610567024337
-    second: char-builder-sheet-alpha_176
+    second: skeleton_walk_right_1
   - first:
       213: -3619097886535744121
-    second: char-builder-sheet-alpha_177
+    second: skeleton_right
   - first:
       213: 3045853531118847387
-    second: char-builder-sheet-alpha_178
+    second: skeleton_walk_right_2
   - first:
       213: -3222717460637968825
     second: char-builder-sheet-alpha_179
@@ -505,13 +505,13 @@ TextureImporter:
     second: char-builder-sheet-alpha_190
   - first:
       213: 8567005287493421740
-    second: char-builder-sheet-alpha_191
+    second: skeleton_walk_up_1
   - first:
       213: -7037003193944115406
-    second: char-builder-sheet-alpha_192
+    second: skeleton_up
   - first:
       213: -4728176324599466273
-    second: char-builder-sheet-alpha_193
+    second: skeleton_walk_up_2
   - first:
       213: 2455369428426076352
     second: char-builder-sheet-alpha_194
@@ -4282,7 +4282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_142
+      name: skeleton_walk_down_1
       rect:
         serializedVersion: 2
         x: 0
@@ -4303,7 +4303,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_143
+      name: skeleton_down
       rect:
         serializedVersion: 2
         x: 16
@@ -4324,7 +4324,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_144
+      name: skeleton_walk_down_2
       rect:
         serializedVersion: 2
         x: 32
@@ -4681,7 +4681,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_161
+      name: skeleton_walk_left_1
       rect:
         serializedVersion: 2
         x: 0
@@ -4702,7 +4702,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_162
+      name: skeleton_left
       rect:
         serializedVersion: 2
         x: 16
@@ -4723,7 +4723,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_163
+      name: skeleton_walk_left_2
       rect:
         serializedVersion: 2
         x: 32
@@ -4996,7 +4996,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_176
+      name: skeleton_walk_right_1
       rect:
         serializedVersion: 2
         x: 0
@@ -5017,7 +5017,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_177
+      name: skeleton_right
       rect:
         serializedVersion: 2
         x: 16
@@ -5038,7 +5038,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_178
+      name: skeleton_walk_right_2
       rect:
         serializedVersion: 2
         x: 32
@@ -5311,7 +5311,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_191
+      name: skeleton_walk_up_1
       rect:
         serializedVersion: 2
         x: 0
@@ -5332,7 +5332,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_192
+      name: skeleton_up
       rect:
         serializedVersion: 2
         x: 16
@@ -5353,7 +5353,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: char-builder-sheet-alpha_193
+      name: skeleton_walk_up_2
       rect:
         serializedVersion: 2
         x: 32
