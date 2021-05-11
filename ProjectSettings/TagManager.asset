@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ennemy
+    uniqueID: 3636045347
+    locked: 0
+  - name: Splatter
+    uniqueID: 698570055
+    locked: 0
   - name: Player
     uniqueID: 1541503215
     locked: 0

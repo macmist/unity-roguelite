@@ -47,6 +47,8 @@ public class EnemyController : MonoBehaviour
         health -= damage;
         if (health <= 0)
             Kill();
+        else
+            Instantiate(damageEffect, transform.position, transform.rotation);
     }
 
     public void Kill() {
