@@ -14,6 +14,9 @@ public class EnemyController : MonoBehaviour
 
     public int health = 150;
 
+    public GameObject[] deathSplatters;
+
+    public GameObject damageEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +27,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position,
+        if(Vector3.Distance(transform.position,
                              PlayerController.instance.transform.position) < rangeToChasePlayer)
         {
             moveDirection = PlayerController.instance.transform.position - transform.position;
@@ -39,10 +42,17 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public void Damage(int damage) 
+    public void Damage(int damage)
     {
         health -= damage;
         if (health <= 0)
-            Destroy(gameObject);
+            Kill();
+    }
+
+    public void Kill() {
+        Destroy(gameObject);
+        int selectedSplatter = Random.Range(0, deathSplatters.Length);
+        int rotation = Random.Range(0, 360);
+        Instantiate(deathSplatters[selectedSplatter], transform.position, Quaternion.Euler(0, 0, rotation));
     }
 }

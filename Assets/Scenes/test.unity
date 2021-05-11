@@ -582,6 +582,11 @@ MonoBehaviour:
   rangeToChasePlayer: 7
   animator: {fileID: 1640169150}
   health: 150
+  deathSplatters:
+  - {fileID: 4037240848172013118, guid: 165e17930aa9946e7b0d5ed73d75d770, type: 3}
+  - {fileID: 2047439498930037143, guid: 20a537279b2c24203bfd0bdc40c00e37, type: 3}
+  - {fileID: 4379322462312514391, guid: 24becee3ac5374e669ca0a44a0f3b73e, type: 3}
+  - {fileID: 5080198756860841832, guid: 80a84e5eb200643328a46faf3d6f0f21, type: 3}
 --- !u!95 &1640169150
 Animator:
   serializedVersion: 3
