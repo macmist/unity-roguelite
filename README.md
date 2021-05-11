@@ -28,9 +28,13 @@ to my own sauce.
 ## Current state
 Still in early development stage.
 
-Latest addition is player shooting shurikens and having them exploding on obstacles.
+Latest addition is a skeleton ennemy following the player, that the player can shoot, make bleed and kill.
 
-https://user-images.githubusercontent.com/8321947/116788507-3da02600-aaaa-11eb-8ce4-fa1bdf7ed52f.mov
+
+https://user-images.githubusercontent.com/8321947/117860265-61c0eb80-b290-11eb-814a-c60f6f349eac.mov
+
+
+
 
 
 
